@@ -63,7 +63,7 @@ header{background:var(--header-bg);border-bottom:1.5px solid var(--border);paddi
 .product-card{background:var(--card-bg);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;transition:all .25s;box-shadow:0 2px 10px rgba(0,0,0,.04);cursor:pointer;}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px var(--shadow);}
 .prod-thumb{width:100%;height:260px;background:var(--primary-light);overflow:hidden;position:relative;}
-.prod-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.prod-thumb img{width:100%;height:100%;transition:transform .4s ease;}
 .product-card:hover .prod-thumb img{transform:scale(1.05);}
 .prod-thumb .no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--text-light);}
 .prod-img-count{position:absolute;bottom:.6rem;right:.6rem;background:rgba(44,31,78,.65);color:#fff;font-size:.7rem;padding:.25rem .6rem;border-radius:50px;font-weight:700;backdrop-filter:blur(4px);}
@@ -94,12 +94,10 @@ header{background:var(--header-bg);border-bottom:1.5px solid var(--border);paddi
 .modal-nav-prev{left:.7rem;}.modal-nav-next{right:.7rem;}
 .prod-modal-thumbs{display:flex;gap:.6rem;overflow-x:auto;padding-bottom:.3rem;}
 .prod-modal-thumbs::-webkit-scrollbar{height:4px;}
-.prod-modal-thumbs::-webkit-scrollbar-track{background:var(--border);border-radius:2px;}
 .prod-modal-thumbs::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
 .thumb-item{min-width:68px;height:68px;border-radius:10px;overflow:hidden;cursor:pointer;border:2.5px solid transparent;transition:.2s;flex-shrink:0;background:var(--primary-light);}
 .thumb-item img{width:100%;height:100%;object-fit:cover;}
 .thumb-item.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(124,92,191,.25);}
-.thumb-item:hover{border-color:var(--primary-dark);}
 .prod-modal-info{padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.9rem;}
 @media(max-width:640px){.prod-modal-info{padding:1.2rem;}}
 .modal-cat-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary-light);color:var(--accent);font-size:.78rem;font-weight:700;padding:.3rem .8rem;border-radius:50px;width:fit-content;}
@@ -109,27 +107,31 @@ header{background:var(--header-bg);border-bottom:1.5px solid var(--border);paddi
 .modal-meta-tag{background:var(--primary-light);color:var(--accent);font-size:.8rem;padding:.35rem .9rem;border-radius:50px;font-weight:600;}
 .modal-divider{border:none;border-top:1.5px solid var(--border);}
 .modal-prod-desc{font-size:.92rem;color:var(--text-light);line-height:1.7;}
-.btn-whatsapp-big{width:100%;padding:.9rem;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:14px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:all .2s;text-decoration:none;margin-top:auto;}
+/* DOIS WHATSAPPS */
+.wa-buttons{display:flex;flex-direction:column;gap:.6rem;margin-top:auto;}
+.btn-whatsapp-big{width:100%;padding:.9rem;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:14px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:all .2s;text-decoration:none;}
 .btn-whatsapp-big:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35);}
+.btn-whatsapp-big.wa2{background:linear-gradient(135deg,#1da851,#0d7a3a);}
 
 footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:3rem;}
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
 .footer-brand .logo-footer{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--primary);}
 .footer-brand p{color:rgba(255,255,255,.6);margin-top:.5rem;font-size:.9rem;}
 .footer-links h4,.footer-social h4{color:var(--primary);margin-bottom:1rem;font-size:.9rem;text-transform:uppercase;letter-spacing:1px;}
-.footer-links a{display:block;color:rgba(255,255,255,.7);text-decoration:none;margin-bottom:.4rem;font-size:.9rem;transition:.2s;}
-.footer-links a:hover{color:#fff;}
+.footer-links a{display:block;color:rgba(255,255,255,.7);text-decoration:none;margin-bottom:.4rem;font-size:.9rem;}
 .footer-social .social-icons{display:flex;gap:1rem;}
 .social-icon-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:1rem;transition:.2s;}
-.social-icon-btn:hover{background:var(--accent);border-color:var(--accent);}
+.social-icon-btn:hover{background:var(--accent);}
 .footer-bottom{max-width:1200px;margin:2rem auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .footer-bottom p{color:rgba(255,255,255,.4);font-size:.8rem;}
 .admin-dots{display:flex;gap:6px;align-items:center;cursor:pointer;padding:.5rem;}
 .admin-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:.2s;}
 .admin-dot.lit{background:var(--primary);}
+
+/* MODAIS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(44,31,78,.7);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;}
 .modal-overlay.open{display:flex;}
-.modal{background:#fff;border-radius:24px;padding:2.5rem;width:90%;max-width:460px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2);animation:slideUp .3s ease;max-height:90vh;overflow-y:auto;}
+.modal{background:#fff;border-radius:24px;padding:2.5rem;width:90%;max-width:480px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2);animation:slideUp .3s ease;max-height:90vh;overflow-y:auto;}
 @keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal h2{font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:1.5rem;font-size:1.5rem;}
 .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;color:var(--text-light);cursor:pointer;}
@@ -138,8 +140,10 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:12px;font-size:.95rem;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;transition:.2s;background:var(--primary-ultra);}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);background:#fff;}
 .btn-primary{width:100%;padding:1rem;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:.2s;}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);}
+.btn-primary:hover{background:var(--primary-dark);}
 .login-error{color:#e53e3e;font-size:.85rem;margin-top:.5rem;display:none;}
+
+/* ADMIN */
 .admin-panel{display:none;position:fixed;inset:0;background:var(--primary-ultra);z-index:500;overflow-y:auto;}
 .admin-panel.open{display:block;}
 .admin-header{background:var(--accent);color:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
@@ -158,9 +162,21 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
 .btn-danger{padding:.5rem .9rem;background:#fff5f5;color:#e53e3e;border:1.5px solid #fed7d7;border-radius:8px;font-weight:600;cursor:pointer;font-size:.8rem;}
 .btn-danger:hover{background:#fed7d7;}
 .btn-edit{padding:.5rem .9rem;background:var(--primary-light);color:var(--accent);border:1.5px solid var(--border);border-radius:8px;font-weight:600;cursor:pointer;font-size:.8rem;}
+.btn-sm{padding:.4rem .8rem;background:var(--primary-light);color:var(--accent);border:1.5px solid var(--border);border-radius:8px;font-weight:600;cursor:pointer;font-size:.78rem;}
 .list-item{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:12px;margin-bottom:.6rem;background:var(--primary-ultra);}
-.list-item-info{display:flex;align-items:center;gap:.8rem;}
-.list-item-actions{display:flex;gap:.5rem;}
+.list-item-info{display:flex;align-items:center;gap:.8rem;flex:1;min-width:0;}
+.list-item-actions{display:flex;gap:.4rem;flex-shrink:0;}
+
+/* SLIDE LIST ITEM com reordenar */
+.slide-list-item{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:12px;margin-bottom:.6rem;background:var(--primary-ultra);}
+.slide-order-btns{display:flex;flex-direction:column;gap:2px;}
+.slide-order-btn{background:none;border:1px solid var(--border);border-radius:4px;width:22px;height:22px;cursor:pointer;font-size:.65rem;color:var(--text-light);display:flex;align-items:center;justify-content:center;transition:.2s;}
+.slide-order-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.slide-thumb{width:60px;height:45px;object-fit:cover;border-radius:8px;flex-shrink:0;background:var(--primary-light);}
+.slide-info{flex:1;min-width:0;}
+.slide-info span{font-weight:600;font-size:.9rem;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.slide-info small{color:var(--text-light);font-size:.75rem;}
+
 .color-palette{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem;}
 .color-swatch{width:40px;height:40px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:.2s;}
 .color-swatch.selected{border-color:var(--text);transform:scale(1.1);}
@@ -170,8 +186,6 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
 .range-group{display:flex;align-items:center;gap:1rem;}
 .range-group input[type=range]{flex:1;accent-color:var(--accent);}
 .range-val{font-weight:700;color:var(--accent);min-width:40px;}
-
-/* GRID 4 FOTOS */
 .multi-img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:.5rem;}
 @media(max-width:600px){.multi-img-grid{grid-template-columns:repeat(2,1fr);}}
 .img-slot{border:2px dashed var(--border);border-radius:12px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;background:var(--primary-ultra);transition:.2s;}
@@ -181,7 +195,13 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
 .img-slot .slot-icon{font-size:1.4rem;color:var(--border);}
 .img-slot .remove-img{position:absolute;top:3px;right:3px;background:#e53e3e;color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:.6rem;cursor:pointer;display:none;align-items:center;justify-content:center;}
 .img-slot.has-img .remove-img{display:flex;}
-.upload-hint{font-size:.78rem;color:var(--text-light);text-align:center;margin-bottom:1rem;}
+
+/* AJUSTE DE IMAGEM DO PRODUTO */
+.img-adjust-wrap{position:relative;width:100%;height:200px;border:2px solid var(--border);border-radius:12px;overflow:hidden;background:var(--primary-light);margin-bottom:.8rem;}
+.img-adjust-wrap img{position:absolute;cursor:grab;user-select:none;}
+.img-adjust-wrap img:active{cursor:grabbing;}
+.adjust-controls{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem;}
+
 .db-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;padding:.3rem .8rem;border-radius:50px;font-weight:600;}
 .db-ok{background:rgba(255,255,255,.2);color:#fff;}
 .db-err{background:#c53030;color:#fff;}
@@ -190,6 +210,8 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
 .toast.show{display:block;}
 .empty-state{text-align:center;padding:3rem;color:var(--text-light);}
 .empty-state i{font-size:3rem;margin-bottom:1rem;display:block;color:var(--border);}
+.upload-hint{font-size:.78rem;color:var(--text-light);text-align:center;margin-bottom:1rem;}
+.info-box{background:var(--primary-light);border:1.5px solid var(--border);border-radius:10px;padding:.8rem 1rem;font-size:.83rem;color:var(--text-light);margin-bottom:1rem;}
 @media(max-width:768px){.footer-inner{grid-template-columns:1fr;}.header-actions .social-btn span{display:none;}.products-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}.hero h1{font-size:2rem;}.carousel-slide{height:240px;}}
 </style>
 </head>
@@ -275,9 +297,7 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
     <button class="prod-modal-close" onclick="closeProdModal()"><i class="fas fa-times"></i></button>
     <div class="prod-modal-body">
       <div class="prod-modal-gallery">
-        <div class="prod-modal-main" id="modalMainImg">
-          <div class="no-img-big"><i class="fas fa-tshirt"></i></div>
-        </div>
+        <div class="prod-modal-main" id="modalMainImg"><div class="no-img-big"><i class="fas fa-tshirt"></i></div></div>
         <div class="prod-modal-thumbs" id="modalThumbs"></div>
       </div>
       <div class="prod-modal-info">
@@ -287,7 +307,8 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         <div class="modal-prod-meta" id="modalMeta"></div>
         <hr class="modal-divider"/>
         <div class="modal-prod-desc" id="modalDesc"></div>
-        <a class="btn-whatsapp-big" id="modalWaBtn" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Tenho interesse — enviar mensagem</a>
+        <!-- DOIS WHATSAPPS -->
+        <div class="wa-buttons" id="waButtons"></div>
       </div>
     </div>
   </div>
@@ -305,7 +326,72 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
   </div>
 </div>
 
-<!-- ADMIN -->
+<!-- MODAL EDITAR SLIDE -->
+<div class="modal-overlay" id="editSlideModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('editSlideModal')"><i class="fas fa-times"></i></button>
+    <h2>🎠 Editar Slide</h2>
+    <input type="hidden" id="editSlideId"/>
+    <div class="form-group"><label>Legenda</label><input type="text" id="editSlideCaption"/></div>
+    <div class="form-group"><label>Trocar Imagem (opcional)</label>
+      <div class="img-preview-wrap" onclick="document.getElementById('editSlideImgInput').click()">
+        <div id="editSlidePreview" class="placeholder-text"><i class="fas fa-image" style="font-size:1.8rem;display:block;margin-bottom:.4rem"></i>Clique para trocar imagem</div>
+      </div>
+      <input type="file" id="editSlideImgInput" accept="image/*" style="display:none" onchange="previewEditSlide(event)"/>
+    </div>
+    <button class="btn-primary" onclick="saveEditSlide()">💾 Salvar Slide</button>
+  </div>
+</div>
+
+<!-- MODAL EDITAR CATEGORIA -->
+<div class="modal-overlay" id="editCatModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('editCatModal')"><i class="fas fa-times"></i></button>
+    <h2>✏️ Editar Categoria</h2>
+    <input type="hidden" id="editCatId"/>
+    <div class="form-group"><label>Nome</label><input type="text" id="editCatNome"/></div>
+    <div class="form-group"><label>Emoji</label><input type="text" id="editCatEmoji" maxlength="4"/></div>
+    <div class="form-group"><label>Imagem</label>
+      <div class="img-preview-wrap" onclick="document.getElementById('editCatImg').click()" style="height:110px">
+        <div id="editCatImgPreview" class="placeholder-text"><i class="fas fa-image"></i> Clique para trocar</div>
+      </div>
+      <input type="file" id="editCatImg" accept="image/*" style="display:none" onchange="previewEditCatImg(event)"/>
+    </div>
+    <div class="form-group">
+      <label>Tamanho da imagem (%)</label>
+      <div class="range-group">
+        <input type="range" id="editCatSize" min="30" max="100" value="80" oninput="document.getElementById('editCatSizeVal').textContent=this.value+'%'"/>
+        <span class="range-val" id="editCatSizeVal">80%</span>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="saveEditCategory()">💾 Salvar</button>
+  </div>
+</div>
+
+<!-- MODAL AJUSTAR IMAGEM PRODUTO -->
+<div class="modal-overlay" id="adjustImgModal">
+  <div class="modal" style="max-width:520px">
+    <button class="modal-close" onclick="closeModal('adjustImgModal')"><i class="fas fa-times"></i></button>
+    <h2>🖼️ Ajustar Imagem do Produto</h2>
+    <p style="font-size:.85rem;color:var(--text-light);margin-bottom:1rem">Arraste a imagem para reposicionar e use o zoom para ajustar o enquadramento.</p>
+    <div class="img-adjust-wrap" id="adjustWrap">
+      <img id="adjustImg" src="" draggable="false"/>
+    </div>
+    <div class="adjust-controls">
+      <div class="form-group" style="margin:0">
+        <label>🔍 Zoom</label>
+        <div class="range-group">
+          <input type="range" id="adjustZoom" min="80" max="300" value="100" oninput="updateAdjustZoom()"/>
+          <span class="range-val" id="adjustZoomVal">100%</span>
+        </div>
+      </div>
+    </div>
+    <div class="info-box">💡 Arraste a imagem para escolher o enquadramento</div>
+    <button class="btn-primary" onclick="saveAdjustImg()">✅ Aplicar Ajuste</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
 <div class="admin-panel" id="adminPanel">
   <div class="admin-header">
     <h1>⚙️ Painel Administrativo</h1>
@@ -323,12 +409,17 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
     <button class="admin-tab" onclick="showTab('tabSeguranca',this)">🔑 Segurança</button>
   </div>
   <div class="admin-content">
+
+    <!-- LOJA -->
     <div class="admin-section active" id="tabLoja">
       <div class="admin-card">
         <h3>Informações da Loja</h3>
         <div class="admin-grid">
           <div class="form-group"><label>Nome da Loja</label><input type="text" id="cfgNome"/></div>
-          <div class="form-group"><label>WhatsApp</label><input type="text" id="cfgWhats" placeholder="5511999999999"/></div>
+          <div class="form-group"><label>WhatsApp 1 (principal)</label><input type="text" id="cfgWhats" placeholder="5511999999999"/></div>
+          <div class="form-group"><label>WhatsApp 1 — Nome/Label</label><input type="text" id="cfgWhatsLabel" placeholder="Ex: Vendas, Atendimento..."/></div>
+          <div class="form-group"><label>WhatsApp 2 (opcional)</label><input type="text" id="cfgWhats2" placeholder="5511988888888"/></div>
+          <div class="form-group"><label>WhatsApp 2 — Nome/Label</label><input type="text" id="cfgWhats2Label" placeholder="Ex: Suporte, Maria..."/></div>
           <div class="form-group"><label>Instagram</label><input type="text" id="cfgInsta" placeholder="@minhaloja"/></div>
           <div class="form-group"><label>Slogan</label><input type="text" id="cfgSlogan"/></div>
         </div>
@@ -337,6 +428,8 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         <button class="btn-primary" onclick="saveLojaConfig()">💾 Salvar Informações</button>
       </div>
     </div>
+
+    <!-- CARROSSEL -->
     <div class="admin-section" id="tabCarrossel">
       <div class="admin-card">
         <h3>Adicionar Slide</h3>
@@ -347,8 +440,13 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         <div class="form-group"><label>Legenda</label><input type="text" id="slideCaption" placeholder="Nova Coleção"/></div>
         <button class="btn-primary" onclick="addSlide()">➕ Adicionar Slide</button>
       </div>
-      <div class="admin-card"><h3>Slides</h3><div id="slidesList"></div></div>
+      <div class="admin-card">
+        <h3>Slides Cadastrados — arraste ↑↓ para reordenar</h3>
+        <div id="slidesList"></div>
+      </div>
     </div>
+
+    <!-- CATEGORIAS -->
     <div class="admin-section" id="tabCategorias">
       <div class="admin-card">
         <h3>Nova Categoria</h3>
@@ -371,8 +469,10 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         </div>
         <button class="btn-primary" onclick="addCategory()">➕ Adicionar</button>
       </div>
-      <div class="admin-card"><h3>Categorias</h3><div id="categoriesList"></div></div>
+      <div class="admin-card"><h3>Categorias Cadastradas</h3><div id="categoriesList"></div></div>
     </div>
+
+    <!-- PRODUTOS -->
     <div class="admin-section" id="tabProdutos">
       <div class="admin-card">
         <h3 id="prodFormTitle">Novo Produto</h3>
@@ -383,38 +483,29 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
           <div class="form-group"><label>Estoque</label><input type="number" id="prodQtd" min="0"/></div>
           <div class="form-group"><label>Categoria</label><select id="prodCategoria"></select></div>
         </div>
-        <div class="form-group"><label>Descrição</label><textarea id="prodDesc" rows="2" placeholder="Tecido, detalhes, cores disponíveis..."></textarea></div>
+        <div class="form-group"><label>Descrição</label><textarea id="prodDesc" rows="2" placeholder="Tecido, detalhes, cores..."></textarea></div>
         <div class="form-group">
-          <label>📸 Fotos do Produto (até 4) — imagens são comprimidas automaticamente</label>
-          <p class="upload-hint">Clique em cada quadrado para adicionar uma foto</p>
+          <label>📸 Fotos do Produto (até 4) — comprimidas automaticamente</label>
+          <p class="upload-hint">Clique em cada quadrado para adicionar. Use o botão 🖼️ para ajustar zoom e posição.</p>
           <div class="multi-img-grid">
-            <div class="img-slot" id="slot0" onclick="triggerSlot(0)">
-              <i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 1<br>(principal)</span>
-              <button class="remove-img" onclick="removeImg(event,0)"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="img-slot" id="slot1" onclick="triggerSlot(1)">
-              <i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 2</span>
-              <button class="remove-img" onclick="removeImg(event,1)"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="img-slot" id="slot2" onclick="triggerSlot(2)">
-              <i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 3</span>
-              <button class="remove-img" onclick="removeImg(event,2)"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="img-slot" id="slot3" onclick="triggerSlot(3)">
-              <i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 4</span>
-              <button class="remove-img" onclick="removeImg(event,3)"><i class="fas fa-times"></i></button>
-            </div>
+            <div class="img-slot" id="slot0" onclick="triggerSlot(0)"><i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 1<br>(principal)</span><button class="remove-img" onclick="removeImg(event,0)"><i class="fas fa-times"></i></button></div>
+            <div class="img-slot" id="slot1" onclick="triggerSlot(1)"><i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 2</span><button class="remove-img" onclick="removeImg(event,1)"><i class="fas fa-times"></i></button></div>
+            <div class="img-slot" id="slot2" onclick="triggerSlot(2)"><i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 3</span><button class="remove-img" onclick="removeImg(event,2)"><i class="fas fa-times"></i></button></div>
+            <div class="img-slot" id="slot3" onclick="triggerSlot(3)"><i class="fas fa-camera slot-icon"></i><span class="slot-label">Foto 4</span><button class="remove-img" onclick="removeImg(event,3)"><i class="fas fa-times"></i></button></div>
           </div>
           <input type="file" id="imgInput0" accept="image/*" style="display:none" onchange="loadSlot(event,0)"/>
           <input type="file" id="imgInput1" accept="image/*" style="display:none" onchange="loadSlot(event,1)"/>
           <input type="file" id="imgInput2" accept="image/*" style="display:none" onchange="loadSlot(event,2)"/>
           <input type="file" id="imgInput3" accept="image/*" style="display:none" onchange="loadSlot(event,3)"/>
+          <div id="adjustBtns" style="display:none;gap:.5rem;flex-wrap:wrap;margin-top:.5rem"></div>
         </div>
         <input type="hidden" id="prodEditId"/>
         <button class="btn-primary" id="saveProdBtn" onclick="saveProduct()">💾 Salvar Produto</button>
       </div>
       <div class="admin-card"><h3>Produtos Cadastrados</h3><div id="productsList"></div></div>
     </div>
+
+    <!-- APARÊNCIA -->
     <div class="admin-section" id="tabConfigs">
       <div class="admin-card">
         <h3>Cor do Site</h3>
@@ -442,6 +533,8 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         <button class="btn-primary" onclick="saveHeroTitle()">💾 Salvar</button>
       </div>
     </div>
+
+    <!-- SEGURANÇA -->
     <div class="admin-section" id="tabSeguranca">
       <div class="admin-card">
         <h3>Alterar Credenciais</h3>
@@ -451,31 +544,7 @@ footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem 2rem;margin-top:
         <button class="btn-primary" onclick="saveCredentials()">🔒 Salvar</button>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- MODAL EDITAR CATEGORIA -->
-<div class="modal-overlay" id="editCatModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('editCatModal')"><i class="fas fa-times"></i></button>
-    <h2>✏️ Editar Categoria</h2>
-    <input type="hidden" id="editCatId"/>
-    <div class="form-group"><label>Nome</label><input type="text" id="editCatNome"/></div>
-    <div class="form-group"><label>Emoji</label><input type="text" id="editCatEmoji" maxlength="4"/></div>
-    <div class="form-group"><label>Imagem</label>
-      <div class="img-preview-wrap" onclick="document.getElementById('editCatImg').click()" style="height:110px">
-        <div id="editCatImgPreview" class="placeholder-text"><i class="fas fa-image"></i> Clique</div>
-      </div>
-      <input type="file" id="editCatImg" accept="image/*" style="display:none" onchange="previewEditCatImg(event)"/>
-    </div>
-    <div class="form-group">
-      <label>Tamanho (%)</label>
-      <div class="range-group">
-        <input type="range" id="editCatSize" min="30" max="100" value="80" oninput="document.getElementById('editCatSizeVal').textContent=this.value+'%'"/>
-        <span class="range-val" id="editCatSizeVal">80%</span>
-      </div>
-    </div>
-    <button class="btn-primary" onclick="saveEditCategory()">💾 Salvar</button>
   </div>
 </div>
 
@@ -489,33 +558,33 @@ const SURL='https://oodpnsishqrektunabfi.supabase.co';
 const SKEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9vZHBuc2lzaHFyZWt0dW5hYmZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1NDk2NzIsImV4cCI6MjA5NDEyNTY3Mn0.kVV7G9FNGUkgrAfMeGnA3tolTbFq1i0ljhGY4Hb6-os';
 const db=supabase.createClient(SURL,SKEY);
 
-let S={loja:{nome:'Minha Loja',whats:'',insta:'',slogan:'',desc:'',footerDesc:'',heroTitle:'Bem-vinda à nossa loja',theme:'roxo'},creds:{user:'admin',pass:'1234'},slides:[],cats:[],prods:[]};
+let S={
+  loja:{nome:'Minha Loja',whats:'',whatsLabel:'WhatsApp',whats2:'',whats2Label:'',insta:'',slogan:'',desc:'',footerDesc:'',heroTitle:'Bem-vinda à nossa loja',theme:'roxo'},
+  creds:{user:'admin',pass:'1234'},
+  slides:[],cats:[],prods:[]
+};
 let prodImgs=[null,null,null,null];
 let slideImg=null,catImg=null,editCatImg2=null,editCatImgSize2=80;
+let editSlideImg=null;
 let slideN=0,carTimer,dotN=0,dotT,modalImgs=[],modalCur=0;
+// Ajuste de imagem
+let adjustSlotIdx=-1,adjustDragX=0,adjustDragY=0,adjustDragging=false;
+let adjustOffsetX=0,adjustOffsetY=0,adjustScale=1;
 
 // ══════════════════════
-//  COMPRESSÃO DE IMAGEM
-//  Reduz para max 800px e qualidade 0.7
-//  Mantém a imagem bonita mas bem menor
+//  COMPRESSÃO
 // ══════════════════════
-function compressImage(file, maxW=800, maxH=800, quality=0.72){
+function compressImage(file,maxW=800,maxH=800,quality=0.72){
   return new Promise(resolve=>{
     const reader=new FileReader();
     reader.onload=e=>{
       const img=new Image();
       img.onload=()=>{
-        let w=img.width, h=img.height;
-        // Calcula novo tamanho mantendo proporção
-        if(w>maxW||h>maxH){
-          const ratio=Math.min(maxW/w,maxH/h);
-          w=Math.round(w*ratio);
-          h=Math.round(h*ratio);
-        }
+        let w=img.width,h=img.height;
+        if(w>maxW||h>maxH){const r=Math.min(maxW/w,maxH/h);w=Math.round(w*r);h=Math.round(h*r);}
         const canvas=document.createElement('canvas');
-        canvas.width=w; canvas.height=h;
-        const ctx=canvas.getContext('2d');
-        ctx.drawImage(img,0,0,w,h);
+        canvas.width=w;canvas.height=h;
+        canvas.getContext('2d').drawImage(img,0,0,w,h);
         resolve(canvas.toDataURL('image/jpeg',quality));
       };
       img.src=e.target.result;
@@ -525,89 +594,243 @@ function compressImage(file, maxW=800, maxH=800, quality=0.72){
 }
 
 // ══════════════════════
-//  DB LOAD
+//  DB
 // ══════════════════════
 async function dbLoad(){
   try{
     const {data:cfg}=await db.from('loja_config').select('*').eq('id','main').maybeSingle();
     if(cfg){
-      S.loja={nome:cfg.nome||'Minha Loja',whats:cfg.whats||'',insta:cfg.insta||'',slogan:cfg.slogan||'',
-        desc:cfg.desc_loja||'',footerDesc:cfg.footer_desc||'',heroTitle:cfg.hero_title||'Bem-vinda à nossa loja',theme:cfg.theme||'roxo'};
+      S.loja={
+        nome:cfg.nome||'Minha Loja',whats:cfg.whats||'',whatsLabel:cfg.whats_label||'WhatsApp',
+        whats2:cfg.whats2||'',whats2Label:cfg.whats2_label||'',
+        insta:cfg.insta||'',slogan:cfg.slogan||'',desc:cfg.desc_loja||'',
+        footerDesc:cfg.footer_desc||'',heroTitle:cfg.hero_title||'Bem-vinda à nossa loja',theme:cfg.theme||'roxo'
+      };
       if(cfg.credentials)S.creds=cfg.credentials;
     }
     const {data:sl}=await db.from('slides').select('*').order('ordem');
-    if(sl)S.slides=sl.map(s=>({id:s.id,caption:s.caption,img:s.img}));
+    if(sl)S.slides=sl.map(s=>({id:s.id,caption:s.caption,img:s.img,ordem:s.ordem||0}));
     const {data:ca}=await db.from('categorias').select('*').order('criado_em');
     if(ca)S.cats=ca.map(c=>({id:c.id,nome:c.nome,emoji:c.emoji,img:c.img,size:c.img_size||80}));
     const {data:pr}=await db.from('produtos').select('*').order('criado_em');
-    if(pr)S.prods=pr.map(p=>({id:p.id,nome:p.nome,preco:p.preco,tamanho:p.tamanho,qtd:p.qtd,catId:p.cat_id,desc:p.descricao||'',imgs:p.imgs||(p.img?[p.img]:[]) }));
+    if(pr)S.prods=pr.map(p=>({id:p.id,nome:p.nome,preco:p.preco,tamanho:p.tamanho,qtd:p.qtd,catId:p.cat_id,desc:p.descricao||'',imgs:p.imgs||(p.img?[p.img]:[])}));
     return true;
   }catch(e){console.error(e);return false;}
 }
 async function dbSaveCfg(x={}){
-  const r={id:'main',nome:S.loja.nome,whats:S.loja.whats,insta:S.loja.insta,slogan:S.loja.slogan,desc_loja:S.loja.desc,footer_desc:S.loja.footerDesc,hero_title:S.loja.heroTitle,theme:S.loja.theme,credentials:S.creds,...x};
+  const r={id:'main',nome:S.loja.nome,whats:S.loja.whats,whats_label:S.loja.whatsLabel,
+    whats2:S.loja.whats2,whats2_label:S.loja.whats2Label,
+    insta:S.loja.insta,slogan:S.loja.slogan,desc_loja:S.loja.desc,footer_desc:S.loja.footerDesc,
+    hero_title:S.loja.heroTitle,theme:S.loja.theme,credentials:S.creds,...x};
   const {error}=await db.from('loja_config').upsert(r);return error;
 }
-async function saveLojaConfig(){S.loja.nome=g('cfgNome')||S.loja.nome;S.loja.whats=g('cfgWhats');S.loja.insta=g('cfgInsta');S.loja.slogan=g('cfgSlogan');S.loja.desc=g('cfgDesc');S.loja.footerDesc=g('cfgFooterDesc');const e=await dbSaveCfg();if(e){toast('❌ '+e.message);return;}applyLoja();toast('✅ Salvo!');}
+async function saveLojaConfig(){
+  S.loja.nome=g('cfgNome')||S.loja.nome;
+  S.loja.whats=g('cfgWhats');S.loja.whatsLabel=g('cfgWhatsLabel')||'WhatsApp';
+  S.loja.whats2=g('cfgWhats2');S.loja.whats2Label=g('cfgWhats2Label')||'WhatsApp 2';
+  S.loja.insta=g('cfgInsta');S.loja.slogan=g('cfgSlogan');
+  S.loja.desc=g('cfgDesc');S.loja.footerDesc=g('cfgFooterDesc');
+  const e=await dbSaveCfg();if(e){toast('❌ '+e.message);return;}
+  applyLoja();toast('✅ Salvo!');
+}
 async function saveHeroTitle(){S.loja.heroTitle=g('cfgHeroTitle')||S.loja.heroTitle;await dbSaveCfg();applyLoja();toast('✅ Título salvo!');}
 async function saveTheme(){await dbSaveCfg();toast('✅ Tema salvo!');}
 async function saveCredentials(){const u=g('newUser'),p=g('newPass'),p2=g('newPassConf');if(!u||!p){toast('⚠️ Preencha tudo!');return;}if(p!==p2){toast('⚠️ Senhas não conferem!');return;}S.creds={user:u,pass:p};await dbSaveCfg();['newUser','newPass','newPassConf'].forEach(i=>el(i).value='');toast('🔒 Salvo!');}
 
 // ══════════════════════
-//  SLIDES
+//  SLIDES — adicionar, editar, reordenar
 // ══════════════════════
-async function previewSlideImg(e){const f=e.target.files[0];if(!f)return;slideImg=await compressImage(f,1200,600,0.8);el('slidePreview').innerHTML=`<img src="${slideImg}" style="max-height:120px;object-fit:contain"/>`;}
-async function addSlide(){const cap=g('slideCaption')||'Destaque';const id=uid();const {error}=await db.from('slides').insert({id,caption:cap,img:slideImg,ordem:S.slides.length});if(error){toast('❌ '+error.message);return;}S.slides.push({id,caption:cap,img:slideImg});renderCarousel();renderSlidesList();resetSlideForm();toast('✅ Slide adicionado!');}
-async function delSlide(id){await db.from('slides').delete().eq('id',id);S.slides=S.slides.filter(s=>s.id!==id);renderCarousel();renderSlidesList();toast('🗑️ Removido!');}
-function renderSlidesList(){const e=el('slidesList');if(!S.slides.length){e.innerHTML='<div class="empty-state"><i class="fas fa-film"></i>Nenhum slide.</div>';return;}e.innerHTML=S.slides.map(s=>`<div class="list-item"><div class="list-item-info">${s.img?`<img src="${s.img}" style="width:50px;height:38px;object-fit:cover;border-radius:6px"/>`:'<i class="fas fa-image" style="color:var(--border);font-size:1.5rem"></i>'}<span>${s.caption}</span></div><button class="btn-danger" onclick="delSlide('${s.id}')"><i class="fas fa-trash"></i></button></div>`).join('');}
+async function previewSlideImg(e){const f=e.target.files[0];if(!f)return;slideImg=await compressImage(f,1200,600,.8);el('slidePreview').innerHTML=`<img src="${slideImg}" style="max-height:120px;object-fit:contain"/>`;}
+
+async function addSlide(){
+  const cap=g('slideCaption')||'Destaque';const id=uid();
+  const ordem=S.slides.length;
+  const {error}=await db.from('slides').insert({id,caption:cap,img:slideImg,ordem});
+  if(error){toast('❌ '+error.message);return;}
+  S.slides.push({id,caption:cap,img:slideImg,ordem});
+  renderCarousel();renderSlidesList();resetSlideForm();toast('✅ Slide adicionado!');
+}
+
+function openEditSlide(id){
+  const s=S.slides.find(x=>x.id===id);
+  el('editSlideId').value=id;
+  el('editSlideCaption').value=s.caption;
+  editSlideImg=null;
+  el('editSlidePreview').innerHTML=s.img?`<img src="${s.img}" style="max-height:120px;object-fit:contain"/>`:
+    '<div class="placeholder-text"><i class="fas fa-image" style="font-size:1.8rem;display:block;margin-bottom:.4rem"></i>Clique para trocar</div>';
+  openModal('editSlideModal');
+}
+async function previewEditSlide(e){const f=e.target.files[0];if(!f)return;editSlideImg=await compressImage(f,1200,600,.8);el('editSlidePreview').innerHTML=`<img src="${editSlideImg}" style="max-height:120px;object-fit:contain"/>`;}
+async function saveEditSlide(){
+  const id=g('editSlideId');const cap=g('editSlideCaption');
+  const upd={caption:cap};if(editSlideImg)upd.img=editSlideImg;
+  const {error}=await db.from('slides').update(upd).eq('id',id);
+  if(error){toast('❌ '+error.message);return;}
+  const s=S.slides.find(x=>x.id===id);s.caption=cap;if(editSlideImg)s.img=editSlideImg;
+  renderCarousel();renderSlidesList();closeModal('editSlideModal');toast('✅ Slide atualizado!');
+}
+
+async function delSlide(id){
+  await db.from('slides').delete().eq('id',id);
+  S.slides=S.slides.filter(s=>s.id!==id);
+  // re-numerar ordem
+  S.slides.forEach((s,i)=>s.ordem=i);
+  await Promise.all(S.slides.map(s=>db.from('slides').update({ordem:s.ordem}).eq('id',s.id)));
+  renderCarousel();renderSlidesList();toast('🗑️ Removido!');
+}
+
+async function moveSlide(id,dir){
+  const idx=S.slides.findIndex(s=>s.id===id);
+  const newIdx=idx+dir;
+  if(newIdx<0||newIdx>=S.slides.length)return;
+  // troca
+  [S.slides[idx],S.slides[newIdx]]=[S.slides[newIdx],S.slides[idx]];
+  S.slides.forEach((s,i)=>s.ordem=i);
+  // salva no db
+  await Promise.all(S.slides.map(s=>db.from('slides').update({ordem:s.ordem}).eq('id',s.id)));
+  renderCarousel();renderSlidesList();toast('↕️ Ordem atualizada!');
+}
+
+function renderSlidesList(){
+  const e=el('slidesList');
+  if(!S.slides.length){e.innerHTML='<div class="empty-state"><i class="fas fa-film"></i>Nenhum slide.</div>';return;}
+  e.innerHTML=S.slides.map((s,i)=>`
+    <div class="slide-list-item">
+      <div class="slide-order-btns">
+        <button class="slide-order-btn" onclick="moveSlide('${s.id}',-1)" ${i===0?'disabled style="opacity:.3"':''}><i class="fas fa-chevron-up"></i></button>
+        <button class="slide-order-btn" onclick="moveSlide('${s.id}',1)" ${i===S.slides.length-1?'disabled style="opacity:.3"':''}><i class="fas fa-chevron-down"></i></button>
+      </div>
+      ${s.img?`<img class="slide-thumb" src="${s.img}"/>`:'<div class="slide-thumb" style="display:flex;align-items:center;justify-content:center"><i class="fas fa-image" style="color:var(--border)"></i></div>'}
+      <div class="slide-info">
+        <span>${s.caption}</span>
+        <small>Posição ${i+1}</small>
+      </div>
+      <div class="list-item-actions">
+        <button class="btn-edit" onclick="openEditSlide('${s.id}')"><i class="fas fa-pen"></i></button>
+        <button class="btn-danger" onclick="delSlide('${s.id}')"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>`).join('');
+}
 function resetSlideForm(){slideImg=null;el('slideCaption').value='';el('slideImgInput').value='';el('slidePreview').innerHTML='<div class="placeholder-text"><i class="fas fa-image" style="font-size:2rem;display:block;margin-bottom:.5rem"></i>Clique para imagem</div>';}
 
 // ══════════════════════
 //  CATEGORIAS
 // ══════════════════════
-async function previewCatImg(e){const f=e.target.files[0];if(!f)return;catImg=await compressImage(f,400,400,0.8);el('catImgPreview').innerHTML=`<img src="${catImg}" style="max-height:90px;object-fit:contain"/>`;el('catSizeGroup').style.display='block';}
+async function previewCatImg(e){const f=e.target.files[0];if(!f)return;catImg=await compressImage(f,400,400,.8);el('catImgPreview').innerHTML=`<img src="${catImg}" style="max-height:90px;object-fit:contain"/>`;el('catSizeGroup').style.display='block';}
 async function addCategory(){const nome=g('catNome');if(!nome){toast('⚠️ Digite o nome!');return;}const emoji=g('catEmoji')||'🛍️';const size=parseInt(el('catImgSize').value);const id=uid();const {error}=await db.from('categorias').insert({id,nome,emoji,img:catImg,img_size:size});if(error){toast('❌ '+error.message);return;}S.cats.push({id,nome,emoji,img:catImg,size});renderCategories();renderCatList();populateCatSel();resetCatForm();toast('✅ Categoria adicionada!');}
 async function delCategory(id){if(!confirm('Remover categoria e produtos?'))return;await db.from('produtos').delete().eq('cat_id',id);await db.from('categorias').delete().eq('id',id);S.cats=S.cats.filter(c=>c.id!==id);S.prods=S.prods.filter(p=>p.catId!==id);renderCategories();renderCatList();renderProds('all');populateCatSel();toast('🗑️ Removida!');}
-function openEditCat(id){const c=S.cats.find(x=>x.id===id);el('editCatId').value=id;el('editCatNome').value=c.nome;el('editCatEmoji').value=c.emoji||'';editCatImg2=c.img||null;editCatImgSize2=c.size||80;el('editCatSize').value=editCatImgSize2;el('editCatSizeVal').textContent=editCatImgSize2+'%';el('editCatImgPreview').innerHTML=c.img?`<img src="${c.img}" style="max-height:90px;object-fit:contain"/>`:'<i class="fas fa-image"></i> Clique';openModal('editCatModal');}
-async function previewEditCatImg(e){const f=e.target.files[0];if(!f)return;editCatImg2=await compressImage(f,400,400,0.8);el('editCatImgPreview').innerHTML=`<img src="${editCatImg2}" style="max-height:90px;object-fit:contain"/>`;}
+function openEditCat(id){const c=S.cats.find(x=>x.id===id);el('editCatId').value=id;el('editCatNome').value=c.nome;el('editCatEmoji').value=c.emoji||'';editCatImg2=c.img||null;editCatImgSize2=c.size||80;el('editCatSize').value=editCatImgSize2;el('editCatSizeVal').textContent=editCatImgSize2+'%';el('editCatImgPreview').innerHTML=c.img?`<img src="${c.img}" style="max-height:90px;object-fit:contain"/>`:'<i class="fas fa-image"></i> Clique para trocar';openModal('editCatModal');}
+async function previewEditCatImg(e){const f=e.target.files[0];if(!f)return;editCatImg2=await compressImage(f,400,400,.8);el('editCatImgPreview').innerHTML=`<img src="${editCatImg2}" style="max-height:90px;object-fit:contain"/>`;}
 async function saveEditCategory(){const id=g('editCatId'),nome=g('editCatNome'),emoji=g('editCatEmoji');const size=parseInt(el('editCatSize').value);const upd={nome,emoji,img_size:size};if(editCatImg2)upd.img=editCatImg2;const {error}=await db.from('categorias').update(upd).eq('id',id);if(error){toast('❌ '+error.message);return;}const c=S.cats.find(x=>x.id===id);c.nome=nome;c.emoji=emoji;c.size=size;if(editCatImg2)c.img=editCatImg2;renderCategories();renderCatList();populateCatSel();closeModal('editCatModal');toast('✅ Atualizada!');}
 function renderCatList(){const e=el('categoriesList');if(!S.cats.length){e.innerHTML='<div class="empty-state"><i class="fas fa-folder"></i>Nenhuma categoria.</div>';return;}e.innerHTML=S.cats.map(c=>`<div class="list-item"><div class="list-item-info"><span style="font-size:1.4rem">${c.img?`<img src="${c.img}" style="width:28px;height:28px;object-fit:contain;border-radius:5px"/>`:(c.emoji||'🛍️')}</span><span>${c.nome}</span></div><div class="list-item-actions"><button class="btn-edit" onclick="openEditCat('${c.id}')"><i class="fas fa-pen"></i></button><button class="btn-danger" onclick="delCategory('${c.id}')"><i class="fas fa-trash"></i></button></div></div>`).join('');}
 function resetCatForm(){catImg=null;['catNome','catEmoji'].forEach(i=>el(i).value='');el('catImgPreview').innerHTML='<i class="fas fa-image"></i> Clique';el('catImgInput').value='';el('catSizeGroup').style.display='none';el('catImgSize').value=80;}
 
 // ══════════════════════
-//  SLOTS DE IMAGEM (com compressão)
+//  SLOTS DE IMAGEM + AJUSTE
 // ══════════════════════
 function triggerSlot(i){el('imgInput'+i).click();}
 async function loadSlot(e,i){
   const f=e.target.files[0];if(!f)return;
   toast('⏳ Processando imagem...');
-  const compressed=await compressImage(f,800,800,0.72);
+  const compressed=await compressImage(f,800,800,.72);
   prodImgs[i]=compressed;
   const s=el('slot'+i);
   s.innerHTML=`<img src="${compressed}"/><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;
   s.classList.add('has-img');
+  updateAdjustBtns();
   toast('✅ Foto '+(i+1)+' adicionada!');
 }
-function removeImg(e,i){
-  e.stopPropagation();prodImgs[i]=null;
-  const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];
-  const s=el('slot'+i);
-  s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;
-  s.classList.remove('has-img');el('imgInput'+i).value='';
-}
-function resetSlots(){
-  const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];
-  prodImgs=[null,null,null,null];
-  for(let i=0;i<4;i++){const s=el('slot'+i);s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.remove('has-img');el('imgInput'+i).value='';}
-}
-function fillSlots(imgs){
-  const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];
-  prodImgs=[null,null,null,null];
-  for(let i=0;i<4;i++){const s=el('slot'+i);if(imgs&&imgs[i]){prodImgs[i]=imgs[i];s.innerHTML=`<img src="${imgs[i]}"/><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.add('has-img');}else{s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.remove('has-img');el('imgInput'+i).value='';}}
+function removeImg(e,i){e.stopPropagation();prodImgs[i]=null;const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];const s=el('slot'+i);s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.remove('has-img');el('imgInput'+i).value='';updateAdjustBtns();}
+function resetSlots(){const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];prodImgs=[null,null,null,null];for(let i=0;i<4;i++){const s=el('slot'+i);s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.remove('has-img');el('imgInput'+i).value='';}el('adjustBtns').style.display='none';}
+function fillSlots(imgs){const labels=['Foto 1<br>(principal)','Foto 2','Foto 3','Foto 4'];prodImgs=[null,null,null,null];for(let i=0;i<4;i++){const s=el('slot'+i);if(imgs&&imgs[i]){prodImgs[i]=imgs[i];s.innerHTML=`<img src="${imgs[i]}"/><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.add('has-img');}else{s.innerHTML=`<i class="fas fa-camera slot-icon"></i><span class="slot-label">${labels[i]}</span><button class="remove-img" onclick="removeImg(event,${i})"><i class="fas fa-times"></i></button>`;s.classList.remove('has-img');el('imgInput'+i).value='';}}updateAdjustBtns();}
+
+function updateAdjustBtns(){
+  const wrap=el('adjustBtns');
+  const hasAny=prodImgs.some(Boolean);
+  wrap.style.display=hasAny?'flex':'none';
+  wrap.innerHTML=prodImgs.map((img,i)=>img?`<button class="btn-sm" onclick="openAdjust(${i})">🖼️ Ajustar Foto ${i+1}</button>`:'').join('');
 }
 
 // ══════════════════════
-//  SALVAR PRODUTO
+//  AJUSTE DE IMAGEM
+// ══════════════════════
+function openAdjust(i){
+  adjustSlotIdx=i;
+  const img=el('adjustImg');
+  img.src=prodImgs[i];
+  adjustScale=1;adjustOffsetX=0;adjustOffsetY=0;
+  el('adjustZoom').value=100;el('adjustZoomVal').textContent='100%';
+  img.style.width='100%';img.style.height='100%';
+  img.style.objectFit='cover';
+  img.style.transform='';img.style.left='0';img.style.top='0';
+  openModal('adjustImgModal');
+  setTimeout(setupAdjustDrag,100);
+}
+function updateAdjustZoom(){
+  const z=parseInt(el('adjustZoom').value);
+  el('adjustZoomVal').textContent=z+'%';
+  adjustScale=z/100;
+  applyAdjustTransform();
+}
+function applyAdjustTransform(){
+  const img=el('adjustImg');
+  img.style.width=`${adjustScale*100}%`;
+  img.style.height=`${adjustScale*100}%`;
+  img.style.objectFit='cover';
+  img.style.position='absolute';
+  img.style.left=adjustOffsetX+'px';
+  img.style.top=adjustOffsetY+'px';
+}
+function setupAdjustDrag(){
+  const img=el('adjustImg');
+  const wrap=el('adjustWrap');
+  let startX,startY,startOX,startOY;
+  const onDown=e=>{
+    adjustDragging=true;
+    const touch=e.touches?e.touches[0]:e;
+    startX=touch.clientX;startY=touch.clientY;
+    startOX=adjustOffsetX;startOY=adjustOffsetY;
+    e.preventDefault();
+  };
+  const onMove=e=>{
+    if(!adjustDragging)return;
+    const touch=e.touches?e.touches[0]:e;
+    adjustOffsetX=startOX+(touch.clientX-startX);
+    adjustOffsetY=startOY+(touch.clientY-startY);
+    applyAdjustTransform();
+    e.preventDefault();
+  };
+  const onUp=()=>{adjustDragging=false;};
+  img.onmousedown=onDown;img.ontouchstart=onDown;
+  wrap.onmousemove=onMove;wrap.ontouchmove=onMove;
+  wrap.onmouseup=onUp;wrap.ontouchend=onUp;wrap.onmouseleave=onUp;
+}
+function saveAdjustImg(){
+  // Renderiza o crop num canvas e salva como nova imagem no slot
+  const wrap=el('adjustWrap');
+  const img=el('adjustImg');
+  const wW=wrap.offsetWidth,wH=wrap.offsetHeight;
+  const canvas=document.createElement('canvas');
+  canvas.width=wW;canvas.height=wH;
+  const ctx=canvas.getContext('2d');
+  const iW=img.offsetWidth,iH=img.offsetHeight;
+  const x=adjustOffsetX,y=adjustOffsetY;
+  const imgEl=new Image();
+  imgEl.onload=()=>{
+    ctx.drawImage(imgEl,0,0,imgEl.naturalWidth,imgEl.naturalHeight,x,y,iW,iH);
+    const result=canvas.toDataURL('image/jpeg',.85);
+    prodImgs[adjustSlotIdx]=result;
+    const s=el('slot'+adjustSlotIdx);
+    s.innerHTML=`<img src="${result}"/><button class="remove-img" onclick="removeImg(event,${adjustSlotIdx})"><i class="fas fa-times"></i></button>`;
+    s.classList.add('has-img');
+    closeModal('adjustImgModal');
+    toast('✅ Imagem ajustada!');
+  };
+  imgEl.src=prodImgs[adjustSlotIdx];
+}
+
+// ══════════════════════
+//  PRODUTOS
 // ══════════════════════
 async function saveProduct(){
   const nome=g('prodNome');if(!nome){toast('⚠️ Nome obrigatório!');return;}
@@ -616,10 +839,7 @@ async function saveProduct(){
   const imgs=prodImgs.filter(Boolean);
   if(!imgs.length){toast('⚠️ Adicione pelo menos 1 foto!');return;}
   const descricao=g('prodDesc');
-
-  // desabilitar botão para evitar duplo clique
   el('saveProdBtn').disabled=true;el('saveProdBtn').textContent='⏳ Salvando...';
-
   if(editId){
     const upd={nome,preco:parseFloat(preco),tamanho:g('prodTamanho'),qtd:parseInt(g('prodQtd'))||0,cat_id:catId,imgs,descricao};
     const {error}=await db.from('produtos').update(upd).eq('id',editId);
@@ -648,41 +868,33 @@ function populateCatSel(){const s=el('prodCategoria');s.innerHTML=S.cats.map(c=>
 function openProdModal(pid){
   const p=S.prods.find(x=>x.id===pid);if(!p)return;
   const cat=S.cats.find(c=>c.id===p.catId);
-  const wa=(S.loja.whats||'').replace(/\D/g,'');
+  const wa1=(S.loja.whats||'').replace(/\D/g,'');
+  const wa2=(S.loja.whats2||'').replace(/\D/g,'');
   const msg=encodeURIComponent(`Olá! Tenho interesse no produto: ${p.nome} - R$ ${parseFloat(p.preco).toFixed(2)}`);
   modalImgs=p.imgs&&p.imgs.length?p.imgs:[];modalCur=0;
   el('modalCat').innerHTML=`<i class="fas fa-tag"></i> ${cat?cat.nome:'Produto'}`;
   el('modalName').textContent=p.nome;
   el('modalPrice').textContent=`R$ ${parseFloat(p.preco).toFixed(2)}`;
   el('modalDesc').textContent=p.desc||'';
-  let meta='';
-  if(p.tamanho)meta+=`<span class="modal-meta-tag">📏 ${p.tamanho}</span>`;
-  meta+=`<span class="modal-meta-tag">📦 ${p.qtd} unidade(s)</span>`;
+  let meta='';if(p.tamanho)meta+=`<span class="modal-meta-tag">📏 ${p.tamanho}</span>`;meta+=`<span class="modal-meta-tag">📦 ${p.qtd} unidade(s)</span>`;
   el('modalMeta').innerHTML=meta;
-  el('modalWaBtn').href=wa?`https://wa.me/${wa}?text=${msg}`:'#';
+  // BOTÕES WHATSAPP
+  let waBtns='';
+  if(wa1)waBtns+=`<a class="btn-whatsapp-big" href="https://wa.me/${wa1}?text=${msg}" target="_blank"><i class="fab fa-whatsapp"></i> ${S.loja.whatsLabel||'WhatsApp'}</a>`;
+  if(wa2)waBtns+=`<a class="btn-whatsapp-big wa2" href="https://wa.me/${wa2}?text=${msg}" target="_blank"><i class="fab fa-whatsapp"></i> ${S.loja.whats2Label||'WhatsApp 2'}</a>`;
+  if(!wa1&&!wa2)waBtns='<p style="color:var(--text-light);font-size:.85rem;text-align:center">Configure o WhatsApp no painel admin.</p>';
+  el('waButtons').innerHTML=waBtns;
   renderModalGallery();
-  el('prodModal').classList.add('open');
-  document.body.style.overflow='hidden';
+  el('prodModal').classList.add('open');document.body.style.overflow='hidden';
 }
 function renderModalGallery(){
   const mainEl=el('modalMainImg');const thumbsEl=el('modalThumbs');
-  if(modalImgs.length){
-    const showNav=modalImgs.length>1;
-    mainEl.innerHTML=`
-      <img src="${modalImgs[modalCur]}" id="mImg" style="width:100%;height:100%;object-fit:cover;transition:opacity .2s"/>
-      ${showNav?`<button class="modal-nav-btn modal-nav-prev" onclick="modalPrev()"><i class="fas fa-chevron-left"></i></button><button class="modal-nav-btn modal-nav-next" onclick="modalNext()"><i class="fas fa-chevron-right"></i></button>`:''}`;
+  if(modalImgs.length){const showNav=modalImgs.length>1;mainEl.innerHTML=`<img src="${modalImgs[modalCur]}" id="mImg" style="width:100%;height:100%;object-fit:cover;transition:opacity .2s"/>${showNav?`<button class="modal-nav-btn modal-nav-prev" onclick="modalPrev()"><i class="fas fa-chevron-left"></i></button><button class="modal-nav-btn modal-nav-next" onclick="modalNext()"><i class="fas fa-chevron-right"></i></button>`:''}`;
   }else{mainEl.innerHTML=`<div class="no-img-big"><i class="fas fa-tshirt"></i></div>`;}
   thumbsEl.innerHTML=modalImgs.map((img,i)=>`<div class="thumb-item ${i===modalCur?'active':''}" onclick="modalGoTo(${i})"><img src="${img}" alt="${i+1}"/></div>`).join('');
 }
-function modalGoTo(n){
-  if(!modalImgs.length)return;
-  modalCur=(n+modalImgs.length)%modalImgs.length;
-  const mImg=document.getElementById('mImg');
-  if(mImg){mImg.style.opacity='0';setTimeout(()=>{mImg.src=modalImgs[modalCur];mImg.style.opacity='1';},180);}
-  el('modalThumbs').querySelectorAll('.thumb-item').forEach((t,i)=>t.classList.toggle('active',i===modalCur));
-}
-function modalNext(){modalGoTo(modalCur+1);}
-function modalPrev(){modalGoTo(modalCur-1);}
+function modalGoTo(n){if(!modalImgs.length)return;modalCur=(n+modalImgs.length)%modalImgs.length;const mImg=document.getElementById('mImg');if(mImg){mImg.style.opacity='0';setTimeout(()=>{mImg.src=modalImgs[modalCur];mImg.style.opacity='1';},180);}el('modalThumbs').querySelectorAll('.thumb-item').forEach((t,i)=>t.classList.toggle('active',i===modalCur));}
+function modalNext(){modalGoTo(modalCur+1);}function modalPrev(){modalGoTo(modalCur-1);}
 function closeProdModal(){el('prodModal').classList.remove('open');document.body.style.overflow='';}
 el('prodModal').addEventListener('click',e=>{if(e.target===el('prodModal'))closeProdModal();});
 document.addEventListener('keydown',e=>{if(!el('prodModal').classList.contains('open'))return;if(e.key==='ArrowRight')modalNext();if(e.key==='ArrowLeft')modalPrev();if(e.key==='Escape')closeProdModal();});
@@ -690,20 +902,53 @@ document.addEventListener('keydown',e=>{if(!el('prodModal').classList.contains('
 // ══════════════════════
 //  RENDER SITE
 // ══════════════════════
-function applyLoja(){const l=S.loja;document.title=l.nome;el('logoName').textContent=l.nome;el('footerLogoName').textContent=l.nome;el('heroTitle').textContent=l.heroTitle||'Bem-vinda à nossa loja';el('heroDesc').textContent=l.desc||'Descubra peças únicas com estilo, qualidade e muito carinho.';el('footerDesc').textContent=l.footerDesc||'';el('footerCopy').textContent=`© ${new Date().getFullYear()} ${l.nome}. Todos os direitos reservados.`;const wa=(l.whats||'').replace(/\D/g,'');el('headerWhats').href=wa?`https://wa.me/${wa}`:'#';el('footerWhats').href=wa?`https://wa.me/${wa}`:'#';const ig=(l.insta||'').replace('@','');el('headerInsta').href=ig?`https://instagram.com/${ig}`:'#';el('footerInsta').href=ig?`https://instagram.com/${ig}`:'#';}
-function renderCarousel(){const track=el('carouselTrack'),dots=el('carouselDots');track.innerHTML='';dots.innerHTML='';const sl=S.slides.length?S.slides:[{id:'p1',caption:'👗 Nova Coleção',img:null},{id:'p2',caption:'👠 Calçados',img:null},{id:'p3',caption:'🌸 Looks Femininos',img:null},{id:'p4',caption:'🤵 Moda Masculina',img:null},{id:'p5',caption:'👒 Acessórios',img:null}];sl.forEach((s,i)=>{track.innerHTML+=`<div class="carousel-slide">${s.img?`<img src="${s.img}" alt="${s.caption}"/>`:'<div class="slide-placeholder"><i class="fas fa-tshirt"></i></div>'}<div class="slide-caption">${s.caption}</div></div>`;dots.innerHTML+=`<div class="dot ${i===0?'active':''}" onclick="goTo(${i})"></div>`;});goTo(0);}
-function renderCategories(){const grid=el('categoriesGrid');if(!S.cats.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><i class="fas fa-folder-open"></i>Nenhuma categoria.</div>';return;}grid.innerHTML=S.cats.map(c=>`<div class="category-card" onclick="filterCat('${c.id}','${c.nome}',this)"><div class="cat-icon">${c.img?`<img src="${c.img}" style="width:${c.size||80}%;height:${c.size||80}%;object-fit:contain"/>`:`<span>${c.emoji||'🛍️'}</span>`}</div><div class="cat-name">${c.nome}</div><div class="cat-count">${S.prods.filter(p=>p.catId===c.id).length} produto(s)</div></div>`).join('')+`<div class="category-card" onclick="filterCat('all','Todos os Produtos',this)"><div class="cat-icon"><span>🌟</span></div><div class="cat-name">Todos</div><div class="cat-count">${S.prods.length} produto(s)</div></div>`;}
-function renderProds(catId){const grid=el('productsGrid');const prods=catId==='all'?S.prods:S.prods.filter(p=>p.catId===catId);if(!prods.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><i class="fas fa-box-open"></i>Nenhum produto.</div>';return;}const wa=(S.loja.whats||'').replace(/\D/g,'');grid.innerHTML=prods.map(p=>{const thumb=p.imgs&&p.imgs[0]?p.imgs[0]:null;const count=p.imgs&&p.imgs.length>1?`<span class="prod-img-count"><i class="fas fa-images"></i> ${p.imgs.length}</span>`:'';const msg=encodeURIComponent(`Olá! Tenho interesse no produto: ${p.nome} - R$ ${parseFloat(p.preco).toFixed(2)}`);const waLink=wa?`https://wa.me/${wa}?text=${msg}`:'#';return `<div class="product-card" onclick="openProdModal('${p.id}')"><div class="prod-thumb">${thumb?`<img src="${thumb}" alt="${p.nome}"/>`:`<div class="no-img"><i class="fas fa-tshirt"></i></div>`}${count}</div><div class="product-info"><div class="product-name">${p.nome}</div><div class="product-price">R$ ${parseFloat(p.preco).toFixed(2)}</div><div class="product-meta">${p.tamanho?`<span class="meta-tag">📏 ${p.tamanho}</span>`:''}<span class="meta-tag">📦 ${p.qtd} un.</span></div><a class="btn-whatsapp-sm" href="${waLink}" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-whatsapp"></i> Tenho interesse</a></div></div>`;}).join('');}
+function applyLoja(){
+  const l=S.loja;document.title=l.nome;el('logoName').textContent=l.nome;el('footerLogoName').textContent=l.nome;
+  el('heroTitle').textContent=l.heroTitle||'Bem-vinda à nossa loja';
+  el('heroDesc').textContent=l.desc||'Descubra peças únicas com estilo, qualidade e muito carinho.';
+  el('footerDesc').textContent=l.footerDesc||'';
+  el('footerCopy').textContent=`© ${new Date().getFullYear()} ${l.nome}. Todos os direitos reservados.`;
+  const wa=(l.whats||'').replace(/\D/g,'');
+  el('headerWhats').href=wa?`https://wa.me/${wa}`:'#';el('footerWhats').href=wa?`https://wa.me/${wa}`:'#';
+  const ig=(l.insta||'').replace('@','');
+  el('headerInsta').href=ig?`https://instagram.com/${ig}`:'#';el('footerInsta').href=ig?`https://instagram.com/${ig}`:'#';
+}
+function renderCarousel(){
+  const track=el('carouselTrack'),dots=el('carouselDots');track.innerHTML='';dots.innerHTML='';
+  const sl=S.slides.length?S.slides:[{id:'p1',caption:'👗 Nova Coleção',img:null},{id:'p2',caption:'👠 Calçados',img:null},{id:'p3',caption:'🌸 Looks Femininos',img:null},{id:'p4',caption:'🤵 Moda Masculina',img:null},{id:'p5',caption:'👒 Acessórios',img:null}];
+  sl.forEach((s,i)=>{track.innerHTML+=`<div class="carousel-slide">${s.img?`<img src="${s.img}" alt="${s.caption}"/>`:'<div class="slide-placeholder"><i class="fas fa-tshirt"></i></div>'}<div class="slide-caption">${s.caption}</div></div>`;dots.innerHTML+=`<div class="dot ${i===0?'active':''}" onclick="goTo(${i})"></div>`;});goTo(0);
+}
+function renderCategories(){
+  const grid=el('categoriesGrid');
+  if(!S.cats.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><i class="fas fa-folder-open"></i>Nenhuma categoria.</div>';return;}
+  grid.innerHTML=S.cats.map(c=>`<div class="category-card" onclick="filterCat('${c.id}','${c.nome}',this)"><div class="cat-icon">${c.img?`<img src="${c.img}" style="width:${c.size||80}%;height:${c.size||80}%;object-fit:contain"/>`:`<span>${c.emoji||'🛍️'}</span>`}</div><div class="cat-name">${c.nome}</div><div class="cat-count">${S.prods.filter(p=>p.catId===c.id).length} produto(s)</div></div>`).join('')+`<div class="category-card" onclick="filterCat('all','Todos os Produtos',this)"><div class="cat-icon"><span>🌟</span></div><div class="cat-name">Todos</div><div class="cat-count">${S.prods.length} produto(s)</div></div>`;
+}
+function renderProds(catId){
+  const grid=el('productsGrid');const prods=catId==='all'?S.prods:S.prods.filter(p=>p.catId===catId);
+  if(!prods.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><i class="fas fa-box-open"></i>Nenhum produto.</div>';return;}
+  const wa=(S.loja.whats||'').replace(/\D/g,'');
+  grid.innerHTML=prods.map(p=>{
+    const thumb=p.imgs&&p.imgs[0]?p.imgs[0]:null;
+    const count=p.imgs&&p.imgs.length>1?`<span class="prod-img-count"><i class="fas fa-images"></i> ${p.imgs.length}</span>`:'';
+    const msg=encodeURIComponent(`Olá! Tenho interesse no produto: ${p.nome} - R$ ${parseFloat(p.preco).toFixed(2)}`);
+    const waLink=wa?`https://wa.me/${wa}?text=${msg}`:'#';
+    return `<div class="product-card" onclick="openProdModal('${p.id}')">
+      <div class="prod-thumb">${thumb?`<img src="${thumb}" alt="${p.nome}"/>`:`<div class="no-img"><i class="fas fa-tshirt"></i></div>`}${count}</div>
+      <div class="product-info">
+        <div class="product-name">${p.nome}</div>
+        <div class="product-price">R$ ${parseFloat(p.preco).toFixed(2)}</div>
+        <div class="product-meta">${p.tamanho?`<span class="meta-tag">📏 ${p.tamanho}</span>`:''}<span class="meta-tag">📦 ${p.qtd} un.</span></div>
+        <a class="btn-whatsapp-sm" href="${waLink}" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-whatsapp"></i> Tenho interesse</a>
+      </div></div>`;}).join('');
+}
 function filterCat(catId,nome,e){el('productsTitle').textContent=nome;renderProds(catId);el('productsSection').scrollIntoView({behavior:'smooth'});document.querySelectorAll('.category-card').forEach(c=>c.classList.remove('active'));if(e)e.classList.add('active');}
 
 // ══════════════════════
 //  CARROSSEL
 // ══════════════════════
 function goTo(n){const track=el('carouselTrack'),dots=document.querySelectorAll('.dot'),t=track.children.length;if(!t)return;slideN=(n+t)%t;track.style.transform=`translateX(-${slideN*100}%)`;dots.forEach((d,i)=>d.classList.toggle('active',i===slideN));}
-function nextSlide(){goTo(slideN+1);resetCar();}
-function prevSlide(){goTo(slideN-1);resetCar();}
-function startCar(){carTimer=setInterval(()=>goTo(slideN+1),4000);}
-function resetCar(){clearInterval(carTimer);startCar();}
+function nextSlide(){goTo(slideN+1);resetCar();}function prevSlide(){goTo(slideN-1);resetCar();}
+function startCar(){carTimer=setInterval(()=>goTo(slideN+1),4000);}function resetCar(){clearInterval(carTimer);startCar();}
 
 // ══════════════════════
 //  TEMA
@@ -718,7 +963,14 @@ function applyCustomColor(){const h=el('customColor').value;document.documentEle
 // ══════════════════════
 function setupDots(){const dots=el('adminDots');dots.addEventListener('click',()=>{dotN++;clearTimeout(dotT);dots.querySelectorAll('.admin-dot').forEach((d,i)=>d.classList.toggle('lit',i<dotN));if(dotN>=5){dotN=0;dots.querySelectorAll('.admin-dot').forEach(d=>d.classList.remove('lit'));openModal('loginModal');}else{dotT=setTimeout(()=>{dotN=0;dots.querySelectorAll('.admin-dot').forEach(d=>d.classList.remove('lit'));},3000);}});}
 function doLogin(){const u=g('loginUser'),p=g('loginPass');if(u===S.creds.user&&p===S.creds.pass){closeModal('loginModal');openAdmin();el('loginError').style.display='none';el('loginUser').value='';el('loginPass').value='';}else{el('loginError').style.display='block';}}
-function openAdmin(){el('adminPanel').classList.add('open');el('cfgNome').value=S.loja.nome;el('cfgWhats').value=S.loja.whats;el('cfgInsta').value=S.loja.insta;el('cfgSlogan').value=S.loja.slogan;el('cfgDesc').value=S.loja.desc;el('cfgFooterDesc').value=S.loja.footerDesc;el('cfgHeroTitle').value=S.loja.heroTitle||'';renderSlidesList();renderCatList();renderProdList();populateCatSel();}
+function openAdmin(){
+  el('adminPanel').classList.add('open');
+  el('cfgNome').value=S.loja.nome;el('cfgWhats').value=S.loja.whats;el('cfgWhatsLabel').value=S.loja.whatsLabel||'';
+  el('cfgWhats2').value=S.loja.whats2||'';el('cfgWhats2Label').value=S.loja.whats2Label||'';
+  el('cfgInsta').value=S.loja.insta;el('cfgSlogan').value=S.loja.slogan;
+  el('cfgDesc').value=S.loja.desc;el('cfgFooterDesc').value=S.loja.footerDesc;el('cfgHeroTitle').value=S.loja.heroTitle||'';
+  renderSlidesList();renderCatList();renderProdList();populateCatSel();
+}
 function exitAdmin(){el('adminPanel').classList.remove('open');applyLoja();renderCategories();renderProds('all');}
 function showTab(id,btn){document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));el(id).classList.add('active');if(btn)btn.classList.add('active');}
 
